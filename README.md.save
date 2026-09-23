@@ -18,6 +18,8 @@ Winlogbeat, log forwarding, vulnerability assessment).
 - **Kibana Alerting** — custom Elasticsearch query rules evaluate incoming
   logs on a schedule and fire alerts when attack thresholds are crossed
 
+Simulated Attack → Windows/Linux Logs → Winlogbeat/Filebeat → Logstash →
+Elasticsearch → Detection Rule → Alert → Kibana Dashboard
 
 
 ## Attacks Simulated
@@ -97,4 +99,4 @@ crossed within the time window.
 ## Acknowledgments
 
 Built as an extension of hands-on ELK Stack, Winlogbeat, and vulnerability
-assessment work completed during a DRDO cybersecurity internship.
+assessment work completed during a DRDO cybersecurity internsh
