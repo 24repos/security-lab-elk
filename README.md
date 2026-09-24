@@ -93,6 +93,11 @@ crossed within the time window.
   `source.ip` would allow distinguishing individual attackers.
 - PowerShell Script Block Logging generates significant log volume in a real
   environment and needs volume-aware retention in production use.
+- Real-time alert notifications (email/Slack) were evaluated but not implemented —
+  Kibana's third-party connectors (Slack, PagerDuty, email) require a Gold-tier
+  license on self-managed Elastic Stack. A Slack Incoming Webhook was configured
+  and verified working end-to-end up to the connector step; wiring it into the
+  alerting rules is a documented next step for a licensed environment.
 
 ## Acknowledgments
 
