@@ -100,24 +100,13 @@ crossed within the time window.
 5. **Recreate detection rules** in Kibana → Stack Management → Rules (see
    `docs/detection-rules.md` for exact query DSL and thresholds).
 
-## Limitations & False Positives
+## Limitations
 
-- Thresholds (5 failed logins/min, 10 blocked connections/min) are tuned for
-  a low-traffic lab environment; a production network would need higher
-  thresholds or baselining to avoid false positives from legitimate traffic.
-- Rules key off simple keyword/field matches rather than correlated,
-  multi-stage detection — a real SOC would chain signals (e.g., scan followed
-  by login attempt from the same IP) for higher-confidence alerts.
-- No IP-based grouping is applied on the current rules; all matches within
-  the window count toward one alert, regardless of source. Grouping by
-  `source.ip` would allow distinguishing individual attackers.
-- PowerShell Script Block Logging generates significant log volume in a real
-  environment and needs volume-aware retention in production use.
-- Real-time alert notifications (email/Slack) were evaluated but not implemented —
-  Kibana's third-party connectors (Slack, PagerDuty, email) require a Gold-tier
-  license on self-managed Elastic Stack. A Slack Incoming Webhook was configured
-  and verified working end-to-end up to the connector step; wiring it into the
-  alerting rules is a documented next step for a licensed environment.
+- Thresholds (5 failed logins/min, 10 UFW block events/min) are tuned for a low-traffic lab environment. A production environment would require baseline-aware thresholds to reduce false positives.
+- Detection rules currently rely on keyword and field matching rather than multi-stage correlation. A production SOC could correlate events, such as a port scan followed by a login attempt from the same source IP.
+- Source IP grouping is implemented for the relevant detection rules, but the current lab does not perform broader cross-event correlation between different attack types.
+- PowerShell Script Block Logging can generate significant log volume in larger environments and would require appropriate retention and filtering.
+- Real-time notifications were evaluated but not implemented. Kibana connectors for services such as Slack require a Gold-tier license for the self-managed Elastic Stack configuration used here. A Slack Incoming Webhook was configured and verified up to the connector step, but wiring it into the alert rules was not completed.
 
 ## Acknowledgments
 
