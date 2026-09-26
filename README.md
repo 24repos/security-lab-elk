@@ -47,6 +47,26 @@ crossed within the time window.
   over time
 - **Network Scanning Activity** — UFW-blocked connection attempts over time
 
+## Screenshots
+
+**All 3 detection rules configured and running:**
+![Rules overview](screenshots/rules-overview.png)
+
+**SSH brute-force attempts captured in Discover:**
+![SSH failed logins](screenshots/discover-ssh-failed-logins.png)
+
+**A detection rule firing and recovering:**
+![Alert history](screenshots/alert-history-example.png)
+
+**Authentication Security Events dashboard:**
+![Authentication dashboard](screenshots/dashboard-auth-events.png)
+
+**Network Scanning Activity dashboard:**
+![Network scanning dashboard](screenshots/network-scanning-dashboard.png)
+
+**ELK stack running via Docker Compose:**
+![Docker containers running](screenshots/docker-containers-running.png)
+
 ## Setup
 
 1. **Start the ELK stack**
