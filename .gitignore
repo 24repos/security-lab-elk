@@ -1,0 +1,14 @@
+# Environment / secrets
+.env
+*.env
+
+# Logs
+*.log
+logs/
+
+# Elasticsearch / application data
+data/
+elasticsearch/
+
+# macOS
+.DS_Store
