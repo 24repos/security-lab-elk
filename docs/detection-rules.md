@@ -53,4 +53,3 @@ Threshold: count() overall documents is above 9, for the last 1 minute.
 - Thresholds were tuned empirically against simulated attack traffic in this
   lab; a 5-attempt SSH/Windows threshold and 10-attempt scan threshold gave
   clean detections with no false positives during testing.
-- None of the rules currently group by `source.ip` — see README limitations.
